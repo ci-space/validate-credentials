@@ -1,7 +1,7 @@
 package validator
 
 import (
-	"github.com/ci-space/validate-github-credentials/internal/credentials"
+	"github.com/ci-space/validate-credentials/internal/credentials"
 )
 
 const (

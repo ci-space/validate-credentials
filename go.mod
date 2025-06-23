@@ -1,4 +1,4 @@
-module github.com/ci-space/validate-github-credentials
+module github.com/ci-space/validate-credentials
 
 go 1.23.10
 
