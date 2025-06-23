@@ -1,8 +1,14 @@
 name: Validate credentials
-description: Action for validate credentials for GitHub
+description: Action for validate credentials for GitHub, Telegram
 inputs:
   github_token:
     description: Token for GitHub account
+    required: false
+  telegram_token:
+    description: Token for Telegram Bot
+    required: false
+  telegram_chat_id:
+    description: ID of validating Telegram Chat
     required: false
 
 branding:

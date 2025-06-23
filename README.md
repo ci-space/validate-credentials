@@ -1,3 +1,3 @@
 # validate-credentials
 
-Action for validate credentials for GitHub account
+Action for validate credentials for GitHub / Telegram account

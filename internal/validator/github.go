@@ -2,13 +2,9 @@ package validator
 
 import (
 	"context"
-	"net/http"
-	"time"
-
 	"github.com/google/go-github/v67/github"
+	"net/http"
 )
-
-const githubTimeout = 30 * time.Second
 
 type GitHub struct {
 	client *github.Client
@@ -21,9 +17,6 @@ func NewGithub(token string) *GitHub {
 }
 
 func (gh *GitHub) Validate(ctx context.Context) error {
-	ctx, cancel := context.WithTimeout(ctx, githubTimeout)
-	defer cancel()
-
 	_, resp, err := gh.client.Emojis.List(ctx)
 	if err == nil {
 		return nil
