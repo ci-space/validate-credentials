@@ -16,4 +16,4 @@ branding:
   color: 'blue'
 runs:
   using: docker
-  image: docker://ghcr.io/ci-space/validate-credentials:v1.0.0
+  image: docker://ghcr.io/ci-space/validate-credentials:v0.1.-1

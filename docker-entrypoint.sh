@@ -11,13 +11,13 @@ isCommand() {
 
 # check if the first argument passed in looks like a flag
 if [ "${1#-}" != "$1" ]; then
-  set -- tini -- /go/bin/validate-github-credentials "$@"
-# check if the first argument passed in is validate-github-credentials
-elif [ "$1" = 'validate-github-credentials' ]; then
+  set -- tini -- /go/bin/validate-credentials "$@"
+# check if the first argument passed in is validate-credentials
+elif [ "$1" = 'validate-credentials' ]; then
   set -- tini -- "$@"
 # check if the first argument passed in matches a known command
 elif isCommand "$1"; then
-  set -- tini -- /go/bin/validate-github-credentials "$@"
+  set -- tini -- /go/bin/validate-credentials "$@"
 fi
 
 exec "$@"
