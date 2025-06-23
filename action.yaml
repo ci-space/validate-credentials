@@ -1,0 +1,13 @@
+name: Validate credentials
+description: Action for validate credentials for GitHub
+inputs:
+  github_token:
+    description: Token for GitHub account
+    required: false
+
+branding:
+  icon: 'message-square'
+  color: 'blue'
+runs:
+  using: docker
+  image: 'Dockerfile'

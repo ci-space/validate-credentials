@@ -1,0 +1,31 @@
+name: Testing
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  code-lint:
+    name: code-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4 # action page: <https://github.com/actions/setup-go>
+        with:
+          go-version: stable
+
+      - name: Install Go dependencies
+        run: go mod download
+
+      - name: Test valid token
+        run: go run main.go
+        env:
+          INPUT_GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Test invalid token
+        run: go run main.go || exit 0
+        env:
+          INPUT_GITHUB_TOKEN: "--invalid--"
